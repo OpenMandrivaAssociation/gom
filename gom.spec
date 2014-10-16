@@ -8,10 +8,10 @@
 
 Name:           gom
 Version:        0.2.1
-Release:        %mkrel 1
+Release:        1
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries
-License:        LGPLv2+
+License:	LGPLv2+
 URL:            https://wiki.gnome.org/Projects/Gom
 Source0:        https://download.gnome.org/sources/gom/%{url_ver}/gom-%{version}.tar.xz
 BuildRequires:  gobject-introspection-devel
@@ -57,7 +57,7 @@ that use %{name}.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure
 %make
 
 %install
@@ -69,7 +69,6 @@ find %{buildroot} -name '*.la' -delete
 %find_lang gom
 
 %files -f gom.lang
-%license COPYING
 
 %files -n %{libname}
 %{_libdir}/libgom-%{api}.so.%{major}
@@ -79,15 +78,9 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/girepository-1.0/Gom-%{api}.typelib
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc/
-%{_includedir}/gom-%{api}/
+%doc %{_datadir}/gtk-doc
+%{_includedir}/gom-%{api}
 %{_libdir}/libgom-%{api}.so
 %{_libdir}/pkgconfig/gom-%{api}.pc
 %{_datadir}/gir-1.0/Gom-%{api}.gir
-
-
-%changelog
-* Tue Sep 30 2014 wally <wally> 0.2.1-1.mga5
-+ Revision: 732572
-- imported package gom
 
