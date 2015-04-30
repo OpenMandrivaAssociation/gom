@@ -7,7 +7,7 @@
 %define url_ver	%(echo %{version} | cut -d. -f1,2)
 
 Name:           gom
-Version:        0.2.1
+Version:         0.3.1
 Release:        2
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries

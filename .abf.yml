@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   gom-0.2.1.tar.xz: 27357835540e3ae67451c957bb7b6a98083d52a9
+sources:
+  gom-0.3.1.tar.xz: 406a99c77650237a3ee45d3916fa5fe4e85d02bc
