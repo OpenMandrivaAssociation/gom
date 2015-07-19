@@ -8,7 +8,7 @@
 
 Name:           gom
 Version:         0.3.1
-Release:        2
+Release:        3
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries
 License:	LGPLv2+
