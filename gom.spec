@@ -71,9 +71,6 @@ that use %{name}.
 #we don't want these
 find %{buildroot} -name '*.la' -delete
 
-%find_lang gom
-
-%files -f gom.lang
 
 %files -n %{libname}
 %{_libdir}/libgom-%{api}.so.%{major}
