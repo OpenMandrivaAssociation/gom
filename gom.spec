@@ -24,6 +24,7 @@ BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(libpng16)
+BuildRequires:  pkgconfig(pygobject-3.0)
 
 %description
 Gom provides an object mapper from GObjects to SQLite. It helps you write
