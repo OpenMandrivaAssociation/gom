@@ -9,8 +9,8 @@
 %define _disable_rebuild_configure 1
 
 Name:           gom
-Version:        0.3.1
-Release:        5
+Version:        0.3.3
+Release:        1
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries
 License:	LGPLv2+
@@ -18,6 +18,7 @@ URL:            https://wiki.gnome.org/Projects/Gom
 Source0:        https://download.gnome.org/sources/gom/%{url_ver}/gom-%{version}.tar.xz
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  intltool
+BuildRequires:  meson
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gobject-2.0)
@@ -60,11 +61,11 @@ that use %{name}.
 %setup -q
 
 %build
-%configure
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 #we don't want these
 find %{buildroot} -name '*.la' -delete
