@@ -21,7 +21,7 @@ BuildRequires:  intltool
 BuildRequires:  meson
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
-BuildRequires:  pkgconfig(gobject-2.0)
+#BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(libpng16)
 BuildRequires:  pkgconfig(pygobject-3.0)
