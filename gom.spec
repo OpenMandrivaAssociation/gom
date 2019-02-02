@@ -79,6 +79,7 @@ find %{buildroot} -name '*.la' -delete
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Gom-%{api}.typelib
+%{python3_sitearch}/gi/overrides/*
 
 %files -n %{devname}
 #doc #{_datadir}/gtk-doc
