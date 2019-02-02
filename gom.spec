@@ -81,7 +81,7 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/girepository-1.0/Gom-%{api}.typelib
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc
+#doc #{_datadir}/gtk-doc
 %{_includedir}/gom-%{api}
 %{_libdir}/libgom-%{api}.so
 %{_libdir}/pkgconfig/gom-%{api}.pc
