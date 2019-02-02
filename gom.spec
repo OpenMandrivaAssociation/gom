@@ -9,8 +9,8 @@
 %define _disable_rebuild_configure 1
 
 Name:           gom
-Version:        0.3.1
-Release:        5
+Version:        0.3.3
+Release:        1
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries
 License:	LGPLv2+
@@ -18,11 +18,14 @@ URL:            https://wiki.gnome.org/Projects/Gom
 Source0:        https://download.gnome.org/sources/gom/%{url_ver}/gom-%{version}.tar.xz
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  intltool
+BuildRequires:  meson
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
-BuildRequires:  pkgconfig(gobject-2.0)
+#BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(libpng16)
+BuildRequires:  python3dist(pygobject)
+BuildRequires:  gtk-doc
 
 %description
 Gom provides an object mapper from GObjects to SQLite. It helps you write
@@ -60,18 +63,15 @@ that use %{name}.
 %setup -q
 
 %build
-%configure
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 #we don't want these
 find %{buildroot} -name '*.la' -delete
 
-%find_lang gom
-
-%files -f gom.lang
 
 %files -n %{libname}
 %{_libdir}/libgom-%{api}.so.%{major}
@@ -79,9 +79,10 @@ find %{buildroot} -name '*.la' -delete
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Gom-%{api}.typelib
+%{python3_sitearch}/gi/overrides/*
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc
+#doc #{_datadir}/gtk-doc
 %{_includedir}/gom-%{api}
 %{_libdir}/libgom-%{api}.so
 %{_libdir}/pkgconfig/gom-%{api}.pc
