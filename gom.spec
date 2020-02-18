@@ -9,8 +9,8 @@
 %define _disable_rebuild_configure 1
 
 Name:           gom
-Version:        0.3.3
-Release:        2
+Version:        0.4
+Release:        1
 Summary:        GObject to SQLite object mapper library
 Group:		System/Libraries
 License:	LGPLv2+
