@@ -25,6 +25,7 @@ BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(libpng16)
 BuildRequires:  python3dist(pygobject)
+BuildRequires:  pkgconfig(python)
 BuildRequires:  gtk-doc
 
 %description
@@ -79,7 +80,7 @@ find %{buildroot} -name '*.la' -delete
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Gom-%{api}.typelib
-%{python3_sitearch}/gi/overrides/*
+#{python3_sitearch}/gi/overrides/*
 
 %files -n %{devname}
 #doc #{_datadir}/gtk-doc
